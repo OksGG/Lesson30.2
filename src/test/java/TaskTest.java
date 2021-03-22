@@ -31,6 +31,7 @@ public class TaskTest {
         element = webDriver.findElement(By.xpath("//*[@id=\"back\"]/a"));
         element.click();
     }
+
     public void clickReturn() {
         element = webDriver.findElement(By.xpath("//*[@id=\"content\"]/button[3]"));
         element.click();
@@ -44,7 +45,7 @@ public class TaskTest {
         webDriver.switchTo().frame("code-frame");
         String pass = webDriver.findElement(By.xpath("//label[@id=\"code\"]")).getText();
         String[] parts = pass.split(" ");
-        String part= parts[parts.length-1];
+        String part = parts[parts.length - 1];
         System.out.println(part);
         webDriver.switchTo().defaultContent();
         element = webDriver.findElement(By.xpath("//*[@id=\"content\"]/input[1]"));
@@ -67,7 +68,7 @@ public class TaskTest {
         String alertText = alert.getText();
         alert.accept();
         String[] parts = alertText.split(" ");
-        String part= parts[parts.length-1];
+        String part = parts[parts.length - 1];
         System.out.println(part);
         Thread.sleep(2000);
         webDriver.switchTo().defaultContent();
@@ -78,11 +79,11 @@ public class TaskTest {
         Thread.sleep(2000);
         String sixthTask = webDriver.findElement(By.xpath("//*[@id=\"content\"]/label")).getText();
         Assert.assertTrue(sixthTask.contains("Great!"));
-         sixthTask = webDriver.findElement(By.xpath("//*[@id=\"content\"]/button[3]")).getText();
+        sixthTask = webDriver.findElement(By.xpath("//*[@id=\"content\"]/button[3]")).getText();
         Assert.assertTrue(sixthTask.contains("RETURN TO MENU"));
         clickReturn();
-         alert = webDriver.switchTo().alert();
-         alert.accept();
+        alert = webDriver.switchTo().alert();
+        alert.accept();
     }
 
     public void seventhTask() throws InterruptedException {
@@ -110,8 +111,8 @@ public class TaskTest {
         element.sendKeys("Russia");
         element = webDriver.findElement(By.xpath("//*[@id=\"content\"]/div/form/input"));
         element.click();
-        WebElement table =      webDriver.findElement(By.xpath("//*[@id=\"customers\"]"));
-                 List<WebElement> rowsList = table.findElements(By.tagName("tr"));
+        WebElement table = webDriver.findElement(By.xpath("//*[@id=\"customers\"]"));
+        List<WebElement> rowsList = table.findElements(By.tagName("tr"));
 
         List<WebElement> columnsList = null;
 
@@ -129,10 +130,9 @@ public class TaskTest {
     }
 
 
-
     @Test
     public void test1() throws InterruptedException {
-       fifthTask();
+        fifthTask();
     }
 
     @Test
@@ -141,8 +141,8 @@ public class TaskTest {
     }
 
     @Test
-   public void test3() throws InterruptedException {
-       seventhTask();
+    public void test3() throws InterruptedException {
+        seventhTask();
 
     }
 
